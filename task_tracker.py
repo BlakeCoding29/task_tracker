@@ -1,4 +1,4 @@
-print("task_tracker")
+print("Task Tracker")
 
 task = input("What task do you want to track? ")
 completed = input("Did you complete it today? yes/no ")
