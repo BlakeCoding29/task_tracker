@@ -1,4 +1,4 @@
-# Task Tracker
+# task_tracker
 
 A simple beginner Python project for tracking one task.
 
