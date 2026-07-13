@@ -8,9 +8,9 @@ completed = input("Did you complete them today? yes/no ").lower()
 tasks = [task1, task2, task3]
 
 print("\nToday's Tasks")
-print("1: ", tasks[0])
-print("2: ", tasks[1])
-print("3: ", tasks[2])
+
+for task in tasks:
+    print("-", task)
 
 status = "Tasks completed" if completed in ["yes", "y"] else "Tasks not completed"
 print(status)
