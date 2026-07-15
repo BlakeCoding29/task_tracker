@@ -1,11 +1,14 @@
 print("Task Tracker")
 
-task1 = input("Enter task 1: ")
-task2 = input("Enter task 2: ")
-task3 = input("Enter task 3: ")
-completed = input("Did you complete them today? yes/no ").lower()
+tasks = []
 
-tasks = [task1, task2, task3]
+task = input("Enter a task, or type done: ")
+
+while task.lower() != "done":
+    tasks.append(task)
+    task = input("Enter another task, or type done: ")
+
+completed = input("Did you complete them today? yes/no: ").lower()
 
 print("\nToday's Tasks")
 
