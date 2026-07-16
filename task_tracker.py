@@ -15,5 +15,7 @@ print("\nToday's Tasks")
 for task in tasks:
     print("-", task)
 
+print(f"\nTotal tasks: {len(tasks)}")
+
 status = "Tasks completed" if completed in ["yes", "y"] else "Tasks not completed"
 print(status)
