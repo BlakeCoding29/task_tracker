@@ -13,9 +13,19 @@ completed = input("Did you complete them today? yes/no: ").lower()
 print("\nToday's Tasks")
 
 for task in tasks:
-    print("-", task)
+    completed = input(f"Did you complete '{task['task']}'? yes/no: ").lower()
+
+    if completed in ["yes", "y"]:
+        task["completed"] = True
+
+print("\nToday's Tasks")
+
+for task in tasks:
+    if task["completed"]:
+        status = "Completed"
+    else:
+        status = "Not Completed"
+
+    print(f"- {task['task']} - {status}")
 
 print(f"\nTotal tasks: {len(tasks)}")
-
-status = "Tasks completed" if completed in ["yes", "y"] else "Tasks not completed"
-print(status)
