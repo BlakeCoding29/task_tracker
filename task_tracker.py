@@ -47,13 +47,17 @@ while True:
             for index, task in enumerate(tasks, start=1):
                 print(f"{index}. {task['task']}")
 
-            task_number = int(input("Enter the task number you completed: "))
+            try:
+                task_number = int(input("Enter the task number you completed: "))
 
-            if 1 <= task_number <= len(tasks):
-                tasks[task_number - 1]["completed"] = True
-                print("Task marked complete.")
-            else:
-                print("Invalid task number.")
+                if 1 <= task_number <= len(tasks):
+                    tasks[task_number - 1]["completed"] = True
+                    print("Task marked complete.")
+                else:
+                    print("Invalid task number.")
+
+            except ValueError:
+                print("Please enter a valid number.")
 
     elif choice == "4":
         if len(tasks) == 0:
