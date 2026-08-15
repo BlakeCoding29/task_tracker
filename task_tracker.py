@@ -6,7 +6,8 @@ while True:
     print("\n1. Add Task")
     print("2. View Tasks")
     print("3. Mark Task Complete")
-    print("4. Exit")
+    print("4. Delete Task")
+    print("5. Exit")
 
     choice = input("Choose an option: ")
 
@@ -55,6 +56,27 @@ while True:
                 print("Invalid task number.")
 
     elif choice == "4":
+        if len(tasks) == 0:
+            print("No tasks to delete.")
+        else:
+            print("\nToday's Tasks")
+
+            for index, task in enumerate(tasks, start=1):
+                print(f"{index}. {task['task']}")
+
+            try:
+                task_number = int(input("Enter the task number you want to delete: "))
+
+                if 1 <= task_number <= len(tasks):
+                    deleted_task = tasks.pop(task_number - 1)
+                    print(f"Deleted: {deleted_task['task']}")
+                else:
+                    print("Invalid task number.")
+
+            except ValueError:
+                print("Please enter a valid number.")            
+
+    elif choice == "5":
         print("\nToday's Tasks")
 
         if len(tasks) == 0:
